@@ -213,7 +213,7 @@ impl Session {
             0xad => {
                 let msg: protocol::keyexchange::APLoginFailed =
                     protobuf::parse_from_bytes(&data).unwrap();
-                error!("Authentication failed, {:?}", msg);
+                error!("Authentication failed, {}", msg);
                 Err(())
             }
             _ => {
